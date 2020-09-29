@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Conditional Demo</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+        //Create a website (from scratch) that asks users if they eat steak.
+        var confirmSteak = confirm("Do you like steak?");
+
+        //If they respond with "yes", alert the following to the page: "Here’s a Steak Sandwich!"
+        if (confirmSteak) {
+            alert("Here’s a Steak Sandwich!");
+        }
+        //If they respond with "no", alert the following to the page: "Here’s a Tofu Stir-Fry!"
+        else {
+            alert("Here’s a Tofu Stir-Fry!");
+
+        }
+
+        //BONUS: Ask what the user’s birth year is. If they are under 21, alert the following: "No Sake for you!"
+        var userage = prompt("What is your age?");
+        if (userage < 21) {alert("No Sake for you!")}
+
+
+    </script>
+
+  </body>
+</html>
