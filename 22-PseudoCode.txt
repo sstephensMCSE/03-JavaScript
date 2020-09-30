@@ -1,0 +1,30 @@
+//computer chooses:
+	var array [rock, paper, scissors]
+	generate random number 0-2
+	console log computer choice
+	var cpuchoice
+	
+//User chooses	
+	do 
+		prompt var userchoice ("Paper, Rock, Scissors?" )
+	while  
+		userchoice !== rock, paper, or scissors
+
+//determine winner
+	if cpuchoice == userchoice, then {result = tied}
+	
+	if userchoice rock {
+		if cpuchoice = paper {result = lose }
+		if cpuchoice = scissors {result = win }		
+	}
+	if userchoice paper {  
+		if cpuchoice = scissors {result = lose}
+		if cpuchoice = rock {result = win }		
+	}
+	if userchoice scissors{ 
+		if cpuchoice = rock {result = win }		
+		if cpuchoice = paper {result = lose}
+	}
+
+Alert ("the computer chose" + cpuchoice + " you " result)
+
