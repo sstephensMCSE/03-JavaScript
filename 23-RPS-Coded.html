@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>PRS Game</title>
+  </head>
+  <body>
+
+    <h1>Lets play Paper, Scissors, Rock</h1>
+
+    <script>
+        
+        //Initialize the RPS Array
+        var RPS = ["rock", "paper", "scissors"]
+
+        //computer chooses:
+        var num = Math.floor(Math.random() * 3);
+        console.log(num);
+        var cpuchoice = RPS[num]
+        console.log(cpuchoice);
+        
+
+        
+        //User chooses	
+        var userchoice = "";
+        do {  
+            userchoice = prompt("do you choose paper, rock, or scissors?").toLowerCase();
+        }
+        while (RPS.indexOf(userchoice) === -1)
+        console.log(userchoice);
+        
+        //determine winner
+        var result = "defined"
+        if (cpuchoice == userchoice) {result = "tied"}
+
+        else if (userchoice == "rock") {
+            if (cpuchoice = "paper") {result = "lose"}
+            else if (cpuchoice == "scissors") {result = "win"}
+        } else if (userchoice == "paper") {  
+            if (cpuchoice == "scissors") {result = "lose"}
+            if (cpuchoice == "rock") {result = "win"}
+        }
+        else if (userchoice == "scissors") { 
+            if (cpuchoice == "rock") {result = "lose" }		
+            else if (cpuchoice == "paper") {result = "win"}
+        }
+
+        // print result
+        console.log(result);
+        alert("The computer chose " + cpuchoice + " you " + result);
+
+    </script>
+    
+  </body>
+</html>
