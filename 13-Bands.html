@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Array Activity - Unsolved</title>
+  </head>
+  <body>
+
+
+    <script type="text/javascript">
+
+        //Create an array of your favorite bands.
+        var bands = ["new", "old", "classic", "lizard"];
+
+        //With a prompt, ask the user's favorite band.
+        var promptvar = prompt("what is your favorite band?");
+
+        //Debug log
+        console.log(bands.indexOf(promptvar.toLowerCase()));
+
+        //If it's one of your favorites, alert: "YEAH I LOVE THEM!"
+
+        if (bands.indexOf(promptvar.toLowerCase()) !== -1){
+            alert("YEAH I LOVE THEM!");
+        }
+
+        //If it's not, alert: "Nah. They're pretty lame."
+
+        else {alert("Nah. They're pretty lame.")}
+
+    </script>
+
+  </body>
+</html>
