@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>33 - Questiongame </title>
+
+    <!-- Instructions
+    
+        Starting from a blank HTML file, create an array with 10 question objects. Each object in the array should be structured as follows:
+    { q: "QUESTION", a: "ANSWER" }
+    
+    Then create code that will ask the user questions, one by one. The user must answer by hitting OK (for true) or Cancel (for false).
+    
+    Check the user's answer against the correct answer, and provide them with an alert telling them if they are right or wrong.
+
+    BONUS: Keep track of the user's score. -->
+
+
+  </head>
+  <body>
+
+    <h1>Javascript Question Game</h1>
+
+    <script>
+
+         // Array of Questions and answers.
+        var gamedata = {
+            score: 0, 
+            "questions": [
+                "A slug has four noses?",
+                "Elephants can jump",
+                "Cheetahs is the fastest land animal",
+                "Sailfish is the fastest aquatic animal",
+                "Tyrannosaurus Rex lived to about 50 years old",
+                "Bowhead whale can live up to 200 years old",
+                "Ladybug spots are red",
+                "Lobsters have 8 legs",
+                "All worker bees are female",
+                "Harry Potter attended school at Hogwarts"        
+            ],
+            "answers": [
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+                false,
+                false,
+                true,
+                true
+            ],
+
+            addPoint: function() {
+            this.score += 1 ;        
+            }
+        }  
+        // Get username
+        var userName = prompt("What's your name?");
+        alert("True or False")
+
+        // loop gamedata.questions.length
+        for (var i = 0; i < gamedata.questions.length; i++) {
+                
+            // ask a question
+            var answer = confirm(gamedata.questions[i]);
+            
+            // calculate result, alert right or wrong, and tally score.
+            if (answer == gamedata.answers[i]) {alert("Correct"); gamedata.addPoint();}
+            else {alert("Incorrect")}
+        }
+
+        // final scoreboard
+
+        alert(`Congratulations ${userName}, you got ${gamedata.score} out of ${gamedata.questions.length} correct!`)
+        
+    </script>
+    
+  </body>
+</html>
