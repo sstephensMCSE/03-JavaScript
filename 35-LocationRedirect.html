@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>35-LocationRedirect</title>
+
+    <!-- Check which OS the user is on and alert a message that says, "Welcome, Windows user!" or, "Welcome, Mac user!"
+
+    Then check their geolocation and redirect them to a new page depending on if they are located in the eastern or western half of the USA. -->
+
+  </head>
+  <body>
+
+    <h1 id="WelcomeMessage"></h1>
+
+    <p>Click the button to get redirected to East or West coast</p>
+
+    <button onclick="getLocation()">Locate Me!</button>
+
+    <p id="location"></p>
+    
+    <input type="button" value="Send me to a new Website" onclick="redirectMe(latitude)">
+    
+    <script type="text/javascript">
+        
+        var OSName = "Unknown";
+        var x = document.getElementById("location");
+        var latitude = ""
+
+        // detect OS        
+        if (window.navigator.userAgent.indexOf("Windows NT 10.0")!= -1) OSName="Windows 10";
+        if (window.navigator.userAgent.indexOf("Windows NT 6.2") != -1) OSName="Windows 8";
+        if (window.navigator.userAgent.indexOf("Windows NT 6.1") != -1) OSName="Windows 7";
+        if (window.navigator.userAgent.indexOf("Windows NT 6.0") != -1) OSName="Windows Vista";
+        if (window.navigator.userAgent.indexOf("Windows NT 5.1") != -1) OSName="Windows XP";
+        if (window.navigator.userAgent.indexOf("Windows NT 5.0") != -1) OSName="Windows 2000";
+        if (window.navigator.userAgent.indexOf("Mac")            != -1) OSName="Mac/iOS";
+        if (window.navigator.userAgent.indexOf("X11")            != -1) OSName="UNIX";
+        if (window.navigator.userAgent.indexOf("Linux")          != -1) OSName="Linux";
+        
+
+        // Welcome user
+        document.getElementById("WelcomeMessage").innerHTML = "Welcome " + OSName +" user!"
+        
+        function getLocation() {
+            navigator.geolocation.getCurrentPosition(
+                function success(position) {            
+                    x.innerHTML = ('latitude ' + position.coords.latitude + ' longitude ' + position.coords.longitude);  
+                    latitude = position.coords.latitude;
+                }
+            )
+        }
+
+        // Redirect to East/West
+        function redirectMe(lat) {
+            if (lat > 30) {
+                window.location.assign("https://en.wikipedia.org/wiki/Georgia_(U.S._state)")
+            } else {
+                window.location.assign("https://en.wikipedia.org/wiki/California")
+            }
+
+        }
+
+    </script>
+
+  </body>
+</html>
+
